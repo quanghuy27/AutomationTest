@@ -1,6 +1,7 @@
 package reports;
 
 import commons.GlobalVariable;
+import helpers.DriverHelper;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.io.FileHandler;
@@ -17,7 +18,7 @@ public class TestUtilities {
     public static String takeScreenShot(String screenShotName) throws IOException {
         String dateFormat = new SimpleDateFormat("yyyyMMddhhss").format(new Date());
         String fileName = screenShotName + dateFormat;
-        TakesScreenshot ts = (TakesScreenshot) GlobalVariable.getDriver();
+        TakesScreenshot ts = (TakesScreenshot) DriverHelper.getDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);
         String dest = BASE_PATH + screenShotName + dateFormat + ".png";
         File destination = new File(dest);

@@ -1,5 +1,6 @@
 package test;
 
+import helpers.DriverHelper;
 import helpers.ModelHelper;
 import model.Product;
 import org.testng.annotations.BeforeClass;
@@ -19,8 +20,8 @@ public class TC001_BuyProductWithSearch extends BaseTest {
     CartPage cartPage = new CartPage();
     LoginPage loginPage = new LoginPage();
     @BeforeClass
-    public void navigateToPage() {
-        navigateByURL(TEST_URL);
+    public void setUp() {
+        DriverHelper.setDriver();
     }
 
     @BeforeClass
@@ -31,7 +32,8 @@ public class TC001_BuyProductWithSearch extends BaseTest {
     @Test
     public void testAddToCartWithSearch() {
         HtmlLog.stepInfo("Open in https://phongvu.vn");
-        HtmlLog.stepInfo("Close ADS");
+        DriverHelper.getDriver().get(TEST_URL);
+
         HtmlLog.stepInfo("Search product with name");
         homePage.setProductName(product.getProductName());
         productsPage.verifyProductsDisplayed();

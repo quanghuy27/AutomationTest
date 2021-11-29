@@ -1,6 +1,7 @@
 package ui;
 
 import commons.GlobalVariable;
+import helpers.DriverHelper;
 import helpers.ElementHelper;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,7 +19,7 @@ public class BaseElement {
     private String locator;
 
     public WebElement getElement() {
-        return GlobalVariable.getDriver().findElement(ElementHelper.getLocatorFromString(locator));
+        return DriverHelper.getDriver().findElement(ElementHelper.getLocatorFromString(locator));
     }
 
     public By getElementLocator() {

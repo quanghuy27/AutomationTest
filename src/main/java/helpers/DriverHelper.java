@@ -8,12 +8,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 public class DriverHelper {
-    public static WebDriver driver;
+//    public static WebDriver driver;
+//
+//    public static void setUp() {
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+//        GlobalVariable.setDriver(driver);
+//    }
+private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-    public static void setUp() {
+    public static  void setDriver() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        GlobalVariable.setDriver(driver);
+        driver.set(new ChromeDriver());
+    }
+
+    public static WebDriver getDriver()
+    {
+        return driver.get();
     }
 
 }

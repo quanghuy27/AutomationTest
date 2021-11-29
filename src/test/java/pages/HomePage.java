@@ -1,7 +1,5 @@
 package pages;
 
-import commons.GlobalVariable;
-import org.openqa.selenium.By;
 import ui.Button;
 import ui.TextBox;
 

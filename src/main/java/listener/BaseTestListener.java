@@ -53,13 +53,12 @@ public class BaseTestListener extends DriverHelper implements ITestListener {
     public void onStart(ITestContext context) {
         System.out.println(context.getName() + " - Test start");
         XMLHelper.getTestDataType(context);
-        DriverHelper.setUp();
         ExtentReportHelper.setUp(context);
     }
 
     @Override
     public void onFinish(ITestContext context) {
         System.out.println(context.getName() + " - Test end.");
-        GlobalVariable.getDriver().close();
+        DriverHelper.getDriver().close();
     }
 }

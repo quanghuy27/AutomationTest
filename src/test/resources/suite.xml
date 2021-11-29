@@ -9,8 +9,8 @@
         <parameter name="environment" value="staging"/>
         <parameter name="recordVideo" value="false"/>
         <classes>
-            <class name="test.TC002_BuyMoreProduct"/>
             <class name="test.TC001_BuyProductWithSearch"/>
+            <class name="test.TC002_BuyMoreProduct"/>
         </classes>
     </test>
 </suite>

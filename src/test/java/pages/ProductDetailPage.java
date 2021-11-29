@@ -8,8 +8,8 @@ import ui.Button;
 public class ProductDetailPage extends PageHelper {
 
 //    private By btnBuyNow = By.xpath("//div[@class=\"css-f7zc9t\"]/button[@class=\"css-1sa0jyd\"]");
-    private final Button btnBuyNow = new Button("xpath = //div[@class=\"css-f7zc9t\"]/button[@class=\"css-1sa0jyd\"]");
-    private final Button btnAddCart = new Button("xpath = //button[@class=\"css-1664w5q\"]");
+    private final Button btnBuyNow = new Button("xpath = //button[@class=\"css-1x895va\"]");
+    private final Button btnAddCart = new Button("xpath = //button[@class=\"css-vxoro2\"]");
     private final Button btnCart = new Button("xpath = //div[@class=\"css-1e18qtw\"]");
     private final Button btnProduct = new Button("xpath = //img[@class=\"css-ckeaxc\"]");
     public void clickBuyNow(){
