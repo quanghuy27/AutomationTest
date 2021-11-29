@@ -1,6 +1,7 @@
 package pages;
 
 import commons.GlobalVariable;
+import helpers.PageHelper;
 import org.openqa.selenium.By;
 
 public class HomePage {
@@ -14,8 +15,5 @@ public class HomePage {
         GlobalVariable.getDriver().findElement(txtSearch).sendKeys(productName);
         GlobalVariable.getDriver().findElement(btnSearch).click();
 
-    }
-    public void closeAds(){
-        GlobalVariable.getDriver().findElement(btnClose).click();
     }
 }

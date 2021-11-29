@@ -5,7 +5,7 @@
     <listeners>
         <listener class-name="listener.BaseTestListener"></listener>
     </listeners>
-    <test name="Test">
+    <test name="TestSearchProduct">
         <parameter name="environment" value="staging"/>
         <parameter name="recordVideo" value="false"/>
         <classes>

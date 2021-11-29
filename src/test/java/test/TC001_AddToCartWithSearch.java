@@ -1,15 +1,14 @@
 package test;
 
 import helpers.ModelHelper;
+import lombok.extern.java.Log;
 import model.Product;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.ProductsPage;
+import pages.*;
 import reports.HtmlLog;
 
-import java.io.IOException;
+
 
 
 public class TC001_AddToCartWithSearch extends BaseTest {
@@ -19,7 +18,9 @@ public class TC001_AddToCartWithSearch extends BaseTest {
     Product product = null;
     HomePage homePage = new HomePage();
     ProductsPage productsPage = new ProductsPage();
-
+    ProductDetailPage productDetailPage = new ProductDetailPage();
+    CartPage cartPage = new CartPage();
+    LoginPage loginPage = new LoginPage();
     @BeforeTest
     public void navigateToPage() {
         navigateByURL(TEST_URL);
@@ -31,13 +32,20 @@ public class TC001_AddToCartWithSearch extends BaseTest {
     }
 
     @Test
-    public void testAddToCartWithSearch() throws IOException {
-        HtmlLog.stepInfo("Check if all information inputted correctly");
+    public void testAddToCartWithSearch() {
+        HtmlLog.stepInfo("Open in https://phongvu.vn");
+        HtmlLog.stepInfo("Close ADS");
+        HtmlLog.stepInfo("Search product with name");
         homePage.setProductName(product.getProductName());
-        homePage.closeAds();
-        HtmlLog.stepInfo("The browser navigated to confirm signup page");
-        productsPage.selectProductWithSearch();
         productsPage.verifyProductsDisplayed();
-
+        HtmlLog.stepInfo("Select product");
+        productsPage.selectProductWithSearch();
+        productDetailPage.verifyProductDetailDisplayed();
+        HtmlLog.stepInfo("Click Buy Now");
+        productDetailPage.clickBuyNow();
+        cartPage.verifyCartDisplayed();
+        HtmlLog.stepInfo("Click Pay");
+        cartPage.clickPay();
+        loginPage.verifyCartDisplayed();
     }
 }
