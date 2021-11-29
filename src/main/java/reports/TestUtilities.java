@@ -15,9 +15,7 @@ public class TestUtilities {
     private static final String BASE_PATH = "src/test/test-output/screenshot/";
 
     public static String takeScreenShot(String screenShotName) throws IOException {
-        //Create a unique String to use for naming screenshot file
         String dateFormat = new SimpleDateFormat("yyyyMMddhhss").format(new Date());
-        //Create object variable of TakeScreenShot class
         String fileName = screenShotName + dateFormat;
         TakesScreenshot ts = (TakesScreenshot) GlobalVariable.getDriver();
         File source = ts.getScreenshotAs(OutputType.FILE);

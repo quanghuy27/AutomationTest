@@ -17,7 +17,7 @@ public class BaseTestListener extends DriverHelper implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println(result.getName() + "-----on test start");
+        System.out.println(result.getName() + " - on test start");
 
         GlobalVariable.setExtentTest(GlobalVariable.getExtentReports().createTest(result.getName()));
     }
@@ -51,7 +51,7 @@ public class BaseTestListener extends DriverHelper implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        System.out.println(context.getName() + "---- Test start");
+        System.out.println(context.getName() + " - Test start");
         XMLHelper.getTestDataType(context);
         DriverHelper.setUp();
         ExtentReportHelper.setUp(context);
@@ -59,7 +59,7 @@ public class BaseTestListener extends DriverHelper implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println(context.getName() + "-----Test end.");
+        System.out.println(context.getName() + " - Test end.");
         GlobalVariable.getDriver().close();
     }
 }

@@ -14,11 +14,6 @@ public class HtmlLog {
         return STEP_LOG_IDX.get();
     }
 
-    /**
-     * Mark down order number for each INFO log
-     *
-     * @param message
-     */
     public static void stepInfo(String message) {
         int currentIndex = getStepIdx();
         String indexWithMessage = String.format(LOG_FORMAT, currentIndex, message);

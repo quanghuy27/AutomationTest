@@ -4,21 +4,24 @@ import com.aventstack.extentreports.Status;
 import commons.GlobalVariable;
 import helpers.PageHelper;
 import org.openqa.selenium.By;
+import ui.Button;
+import ui.Text;
+import ui.TextBox;
 
 public class CartPage extends PageHelper {
-    private By btnPay = By.xpath("//button[@class=\"css-zx0x0o\"]");
-    private By txtCart = By.xpath("//div[@class=\"css-18baaq3\"]");
+//    private By btnPay = By.xpath("//button[@class=\"css-zx0x0o\"]");
+//    private By txtCart = By.xpath("//div[@class=\"css-18baaq3\"]");
+    private final Button btnPay = new Button("xpath = //button[@class=\"css-zx0x0o\"]");
+    private final Text txtCart = new Text("xpath = //div[@class=\"css-18baaq3\"]");
 
 
     public void clickPay(){
-        waitForElementAppearShow(GlobalVariable.getDriver(),txtCart);
-        GlobalVariable.getDriver().findElement(btnPay).click();
+        waitForElementAppearShow(txtCart.getElementLocator());
+        btnPay.click();
     }
 
     public void verifyCartDisplayed() {
-        waitForElementAppearShow(GlobalVariable.getDriver(),txtCart);
-        int numOfProd = GlobalVariable.getDriver().findElements(btnPay).size();
-        Status status = numOfProd > 0 ? Status.PASS : Status.FAIL;
-        GlobalVariable.getExtentTest().log(status, "Verify Cart displayed");
+        waitForElementAppearShow(txtCart.getElementLocator());
+        verifyPoint(btnPay.getElementLocator(),"Verify Cart displayed");
     }
 }
