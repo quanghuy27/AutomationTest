@@ -15,7 +15,7 @@ public class DriverHelper {
 //        driver = new ChromeDriver();
 //        GlobalVariable.setDriver(driver);
 //    }
-private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
+private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static  void setDriver() {
         WebDriverManager.chromedriver().setup();

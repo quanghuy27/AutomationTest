@@ -8,17 +8,18 @@ import helpers.XMLHelper;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import reports.AbstractAssertion;
 import reports.HtmlLog;
+import reports.SoftAssertion;
 import reports.TestUtilities;
 
 import java.io.IOException;
 
-public class BaseTestListener extends DriverHelper implements ITestListener {
+public class BaseTestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
         System.out.println(result.getName() + " - on test start");
-
         GlobalVariable.setExtentTest(GlobalVariable.getExtentReports().createTest(result.getName()));
     }
 
@@ -26,13 +27,14 @@ public class BaseTestListener extends DriverHelper implements ITestListener {
     public void onTestSuccess(ITestResult result) {
         HtmlLog.stepInfo("Test case finished.");
         GlobalVariable.getExtentReports().flush();
+        DriverHelper.getDriver().quit();
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         String path = null;
         try {
-            path = TestUtilities.takeScreenShot(result.getMethod().getMethodName());
+            path = "Fail "+ AbstractAssertion.formatFailedMessage("abc","xyz")+ GlobalVariable.getExtentTest().addScreenCaptureFromPath(TestUtilities.captureScreen());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -58,7 +60,8 @@ public class BaseTestListener extends DriverHelper implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
+        GlobalVariable.getExtentReports().flush();
         System.out.println(context.getName() + " - Test end.");
-        DriverHelper.getDriver().close();
+
     }
 }

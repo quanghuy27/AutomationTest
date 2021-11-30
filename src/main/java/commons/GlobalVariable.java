@@ -8,9 +8,16 @@ import lombok.Setter;
 import org.openqa.selenium.WebDriver;
 
 public class GlobalVariable {
-    @Getter
-    @Setter
-    private static ExtentTest extentTest;
+
+    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
+
+    public static ExtentTest getExtentTest() {
+        return extentTest.get();
+    }
+
+    public static void setExtentTest(ExtentTest test) {
+        extentTest.set(test);
+    }
 
     @Getter
     @Setter
@@ -19,10 +26,6 @@ public class GlobalVariable {
     @Getter
     @Setter
     private static ExtentHtmlReporter htmlReporter;
-
-    @Getter
-    @Setter
-    private static WebDriver driver;
 
     @Getter
     @Setter

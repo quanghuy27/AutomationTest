@@ -7,11 +7,11 @@ import ui.Button;
 
 public class ProductDetailPage extends PageHelper {
 
-//    private By btnBuyNow = By.xpath("//div[@class=\"css-f7zc9t\"]/button[@class=\"css-1sa0jyd\"]");
-    private final Button btnBuyNow = new Button("xpath = //button[@class=\"css-1x895va\"]");
-    private final Button btnAddCart = new Button("xpath = //button[@class=\"css-vxoro2\"]");
-    private final Button btnCart = new Button("xpath = //div[@class=\"css-1e18qtw\"]");
+    private final Button btnBuyNow = new Button("xpath = //button[@data-content-name=\"buyNow\"]");
+    private final Button btnAddCart = new Button("xpath = //button[@data-content-name=\"addToCart\"]");
+    private final Button btnCart = new Button("xpath = //a[@href=\"/cart\" and @class=\"css-cbrxda\"]");
     private final Button btnProduct = new Button("xpath = //img[@class=\"css-ckeaxc\"]");
+
     public void clickBuyNow(){
         waitForElementAppearShow(btnBuyNow.getElementLocator());
         btnBuyNow.click();
@@ -31,11 +31,5 @@ public class ProductDetailPage extends PageHelper {
         waitForElementAppearShow(btnCart.getElementLocator());
         btnCart.click();
     }
-
-    public void chooseMoreProduct(){
-        waitForElementAppearShow(btnProduct.getElementLocator());
-        btnProduct.click();
-    }
-
 
 }

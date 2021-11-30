@@ -9,7 +9,7 @@ import pages.*;
 import reports.HtmlLog;
 
 
-public class TC001_BuyProductWithSearch extends BaseTest {
+public class TC001_BuyProductWithSearch {
 
     private final String TEST_URL = "https://phongvu.vn";
     private final String TEST_PRODUCT = "Asus";

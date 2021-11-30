@@ -11,6 +11,7 @@
         <classes>
             <class name="test.TC001_BuyProductWithSearch"/>
             <class name="test.TC002_BuyMoreProduct"/>
+<!--            <class name="test.TestSeleniumGrid"/>-->
         </classes>
     </test>
 </suite>

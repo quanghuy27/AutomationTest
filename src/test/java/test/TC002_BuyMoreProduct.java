@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import pages.*;
 import reports.HtmlLog;
 
-public class TC002_BuyMoreProduct extends BaseTest{
+public class TC002_BuyMoreProduct{
     private final String TEST_URL = "https://phongvu.vn";
     private final String TEST_PRODUCT = "Asus";
     Product product = null;
@@ -16,6 +16,7 @@ public class TC002_BuyMoreProduct extends BaseTest{
     ProductsPage productsPage = new ProductsPage();
     ProductDetailPage productDetailPage = new ProductDetailPage();
     CartPage cartPage = new CartPage();
+    LoginPage loginPage = new LoginPage();
 
     @BeforeClass
     public void setUp() {
@@ -28,7 +29,7 @@ public class TC002_BuyMoreProduct extends BaseTest{
     }
 
     @Test
-    public void testAddToCartWithSearch() {
+    public void buyMoreProduct() {
         DriverHelper.getDriver().get(TEST_URL);
         HtmlLog.stepInfo("Open in https://phongvu.vn");
 
@@ -48,15 +49,17 @@ public class TC002_BuyMoreProduct extends BaseTest{
         HtmlLog.stepInfo("Click Cart");
         productDetailPage.clickCart();
 
-//        HtmlLog.stepInfo("Choose more product");
-//        productDetailPage.chooseMoreProduct();
-//
-//        HtmlLog.stepInfo("Click Cart");
-//        productDetailPage.clickCart();
-//
-//        HtmlLog.stepInfo("Verify Cart Displayed");
-//        cartPage.verifyCartDisplayed();
+        HtmlLog.stepInfo("Verify Cart Displayed");
+        cartPage.verifyCartDisplayed();
 
+        HtmlLog.stepInfo("Click Delete");
+        cartPage.clickDelete();
+
+        HtmlLog.stepInfo("Click Accept");
+        cartPage.clickAccept();
+
+        HtmlLog.stepInfo("Verify Cart empty");
+        cartPage.verifyCartEmpty();
 
 
     }
