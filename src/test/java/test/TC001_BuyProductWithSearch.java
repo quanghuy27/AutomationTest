@@ -30,9 +30,12 @@ public class TC001_BuyProductWithSearch {
     }
 
     @Test
-    public void testAddToCartWithSearch() {
+    public void AddToCartWithSearch() {
         HtmlLog.stepInfo("Open in https://phongvu.vn");
         DriverHelper.getDriver().get(TEST_URL);
+
+        HtmlLog.stepInfo("Close ADS");
+        homePage.closeADS();
 
         HtmlLog.stepInfo("Search product with name");
         homePage.setProductName(product.getProductName());

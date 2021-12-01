@@ -25,6 +25,7 @@ dependencies {
 
     implementation 'com.aventstack:extentreports:4.0.9'
 
+//    implementation group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.141.59'
 }
 
 test {

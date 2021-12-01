@@ -23,6 +23,6 @@ public class PageHelper {
     public static void verifyPoint(By locator, String text){
         int numOfProd = DriverHelper.getDriver().findElements(locator).size();
         Status status = numOfProd > 0 ? Status.PASS : Status.FAIL;
-        GlobalVariable.getExtentTest().log(status, text);
+        GlobalVariable.getExtentTest().log(status, "&emsp;&emsp;&emsp;"+text);
     }
 }
