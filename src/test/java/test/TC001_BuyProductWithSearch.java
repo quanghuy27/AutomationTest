@@ -30,7 +30,7 @@ public class TC001_BuyProductWithSearch {
     }
 
     @Test
-    public void AddToCartWithSearch() {
+    public void BuyProductWithSearch() {
         HtmlLog.stepInfo("Open in https://phongvu.vn");
         DriverHelper.getDriver().get(TEST_URL);
 

@@ -29,7 +29,7 @@ public class TC003_BuyMoreProduct {
     }
 
     @Test
-    public void ChooseProductAndDeleteProduct() {
+    public void BuyMoreProduct() {
         DriverHelper.getDriver().get(TEST_URL);
         HtmlLog.stepInfo("Open in https://phongvu.vn");
 
