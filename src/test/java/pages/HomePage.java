@@ -31,10 +31,4 @@ public class HomePage extends PageHelper {
         waitForElementAppearShow(btnNews.getElementLocator());
         btnNews.click();
     }
-
-
-
-
-
-
 }
