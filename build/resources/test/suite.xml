@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<!--<suite name="Smoke Test" thread-count="2" parallel="tests">-->
-<suite name="Smoke Test" thread-count="2" parallel="classes">
+<suite name="Phong Vu Test" thread-count="2" parallel="classes">
     <listeners>
         <listener class-name="listener.BaseTestListener"></listener>
     </listeners>
-    <test name="TestSearchProduct">
+    <test name="TestPhongVuPage">
         <parameter name="environment" value="staging"/>
         <parameter name="recordVideo" value="false"/>
         <classes>
