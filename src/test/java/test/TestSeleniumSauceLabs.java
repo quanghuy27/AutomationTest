@@ -12,7 +12,6 @@ import java.net.URL;
 
 public class TestSeleniumSauceLabs {
     public static final String baseUrl = System.getProperty("baseUrl", "https://www.google.com/");
-    //    public static final String host = System.getProperty("host", "localhost");
     public static final String browserName = System.getProperty("browserName", "chrome");
     public static final String browserVersion = System.getProperty("browserVersion", "75.0");
     public static final String platformName = System.getProperty("platformName", "Windows 10");

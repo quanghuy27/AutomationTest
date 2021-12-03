@@ -15,8 +15,6 @@ public class CartPage extends PageHelper {
     private final Button btnAcceptDeleteAll = new Button("xpath = //div[@class=\"css-zbbb61\"]/div[@class=\"css-148sxs3\"]/button[@class=\"css-1jzqxci\"]");
     private final Button modalDeleteAll = new Button("xpath = //div[@class=\"css-zbbb61\"]");
 
-
-
     public void clickPay(){
         waitForElementAppearShow(btnPay.getElementLocator());
         btnPay.click();
