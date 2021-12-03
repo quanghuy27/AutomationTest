@@ -10,7 +10,6 @@ public class ProductDetailPage extends PageHelper {
     private final Button btnBuyNow = new Button("xpath = //button[@data-content-name=\"buyNow\"]");
     private final Button btnAddCart = new Button("xpath = //button[@data-content-name=\"addToCart\"]");
     private final Button btnCart = new Button("xpath = //a[@href=\"/cart\"]");
-//    private final Button btnProduct = new Button("xpath = //img[@class=\"css-ckeaxc\"]");
 
     public void clickBuyNow(){
         waitForElementAppearShow(btnBuyNow.getElementLocator());
