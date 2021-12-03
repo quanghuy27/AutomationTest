@@ -12,7 +12,7 @@ import java.io.IOException;
 
 
 public class PageHelper {
-    private static final int ELEMENT_TIME_WAIT = 15;
+    private static final int ELEMENT_TIME_WAIT = 10;
 
     public static void waitForElementAppearShow(By locator) {
         WebDriverWait webDriverWait = new WebDriverWait(DriverHelper.getDriver(), ELEMENT_TIME_WAIT);

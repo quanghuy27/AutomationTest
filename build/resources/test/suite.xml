@@ -2,19 +2,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!--<suite name="Smoke Test" thread-count="2" parallel="tests">-->
 <suite name="Smoke Test" thread-count="2" parallel="classes">
-<!--    <listeners>-->
-<!--        <listener class-name="listener.BaseTestListener"></listener>-->
-<!--    </listeners>-->
+    <listeners>
+        <listener class-name="listener.BaseTestListener"></listener>
+    </listeners>
     <test name="TestSearchProduct">
         <parameter name="environment" value="staging"/>
         <parameter name="recordVideo" value="false"/>
         <classes>
-<!--            <class name="test.TC001_BuyProductWithSearch"/>-->
-<!--            <class name="test.TC002_ChooseProductAndDeleteProduct"/>-->
-<!--            <class name="test.TC004_ChooseMoreProductAndDeleteAll"/>-->
-<!--            <class name="test.TC003_BuyMoreProduct"/>-->
-<!--            <class name="test.TC005_ViewNews"/>-->
-            <class name="test.TestSeleniumGrid"/>
+            <class name="test.TC001_BuyProductWithSearch"/>
+            <class name="test.TC002_ChooseProductAndDeleteProduct"/>
+            <class name="test.TC004_ChooseMoreProductAndDeleteAll"/>
+            <class name="test.TC003_BuyMoreProduct"/>
+            <class name="test.TC005_ViewNews"/>
+<!--            <class name="test.TestSeleniumGrid"/>-->
 <!--            <class name="test.TestSeleniumSauceLabs"/>-->
         </classes>
     </test>

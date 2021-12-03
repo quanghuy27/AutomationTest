@@ -15,6 +15,6 @@ public class NewsPage extends PageHelper {
     }
 
     public void verifyNewsDisplayed() throws IOException {
-        verifyURL("http","News is displayed");
+        verifyURL("https://phongvu.vn/cong-nghe/","News is displayed");
     }
 }
