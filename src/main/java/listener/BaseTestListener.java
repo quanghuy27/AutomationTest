@@ -35,6 +35,7 @@ public class BaseTestListener implements ITestListener {
             e.printStackTrace();
         }
         ReportHelper.logFail(result.getMethod().getMethodName(), path);
+//        DriverHelper.getDriver().quit();
     }
 
     @Override

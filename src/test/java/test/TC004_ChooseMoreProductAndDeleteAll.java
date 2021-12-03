@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 import pages.*;
 import reports.HtmlLog;
 
+import java.io.IOException;
+
 public class TC004_ChooseMoreProductAndDeleteAll {
     private final String TEST_URL = "https://phongvu.vn";
     private final String TEST_PRODUCT = "Asus";
@@ -18,7 +20,6 @@ public class TC004_ChooseMoreProductAndDeleteAll {
     ProductsPage productsPage = new ProductsPage();
     ProductDetailPage productDetailPage = new ProductDetailPage();
     CartPage cartPage = new CartPage();
-    LoginPage loginPage = new LoginPage();
 
     @BeforeClass
     public void setUp() {
@@ -32,7 +33,7 @@ public class TC004_ChooseMoreProductAndDeleteAll {
     }
 
     @Test
-    public void ChooseMoreProductAndDeleteAll() {
+    public void ChooseMoreProductAndDeleteAll() throws IOException {
         DriverHelper.getDriver().get(TEST_URL);
         HtmlLog.stepInfo("Open in https://phongvu.vn");
 
@@ -78,7 +79,7 @@ public class TC004_ChooseMoreProductAndDeleteAll {
 
         HtmlLog.stepInfo("Search product with name");
         homePage.setProductName(product1.getProductName());
-        productsPage.verifyProductsDisplayed();
+        productsPage.verifyProductsIsDisplayed();
 
         HtmlLog.stepInfo("Choose product 3");
         productsPage.chooseProductSecond();

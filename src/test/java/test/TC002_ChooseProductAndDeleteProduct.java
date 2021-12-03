@@ -16,7 +16,6 @@ public class TC002_ChooseProductAndDeleteProduct {
     ProductsPage productsPage = new ProductsPage();
     ProductDetailPage productDetailPage = new ProductDetailPage();
     CartPage cartPage = new CartPage();
-//    LoginPage loginPage = new LoginPage();
 
     @BeforeClass
     public void setUp() {

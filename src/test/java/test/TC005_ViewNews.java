@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import pages.*;
 import reports.HtmlLog;
 
+import java.io.IOException;
+
 public class TC005_ViewNews {
     private final String TEST_URL = "https://phongvu.vn";
     HomePage homePage = new HomePage();
@@ -16,7 +18,7 @@ public class TC005_ViewNews {
     }
 
     @Test
-    public void ViewNews() {
+    public void ViewNews() throws IOException {
         HtmlLog.stepInfo("Open in https://phongvu.vn");
         DriverHelper.getDriver().get(TEST_URL);
 

@@ -1,13 +1,10 @@
 package reports;
 
-import commons.GlobalVariable;
 import helpers.DriverHelper;
-import helpers.PageHelper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.io.FileHandler;
+
 
 
 import java.io.File;
@@ -30,7 +27,6 @@ public class TestUtilities {
         } catch (IOException e){
             System.out.print("Capture Failed "+e.getMessage());
         }
-
         return destination.substring(59);
     }
 

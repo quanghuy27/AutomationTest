@@ -1,16 +1,19 @@
 package pages;
 
 
+import com.aventstack.extentreports.Status;
 import helpers.PageHelper;
 import ui.Button;
+
+import java.io.IOException;
 
 
 public class ProductsPage extends PageHelper {
 
     private final Button btnAsusWithSearch = new Button("xpath = //div[@class=\"css-eklmil\"]");
     private final Button btnProducts = new Button("xpath = //div[@type=\"caption\" and @color=\"textPrimary\"]");
-    private final Button btnProduct = new Button("xpath = //div[@class=\"css-1vouyjx\" and contains(.,'Laptop ASUS ROG Zephyrus G14 GA401QE-K2097T')]");
-    private final Button btnProductSecond = new Button("xpath = //div[@class=\"css-3z5569\" and contains(.,'Laptop ACER Predator Helios 300 PH315-54-74RU NH.QC1SV.002')]");
+    private final Button btnProduct = new Button("xpath = //div[@color=\"textPrimary\" and contains(.,'Laptop ASUS ROG Zephyrus G14 GA401QE-K2097T 90NR05R6-M01500')]");
+    private final Button btnProductSecond = new Button("xpath = //div[@color=\"textPrimary\" and contains(.,'Laptop ACER Aspire 3 A315-57G-524Z NX.HZRSV.009')]");
     private final Button btnProductSSD = new Button("xpath = //div[@class=\"css-1vouyjx\"]");
 
 
@@ -31,6 +34,10 @@ public class ProductsPage extends PageHelper {
 
     public void verifyProductsDisplayed() {
         verifyPoint(btnProducts.getElementLocator(),"Verify products displayed");
+    }
+
+    public void verifyProductsIsDisplayed() throws IOException {
+        verifyURL("http","HomePage is displayed");
     }
 
 

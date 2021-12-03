@@ -5,7 +5,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import lombok.Getter;
 import lombok.Setter;
-import org.openqa.selenium.WebDriver;
+
 
 public class GlobalVariable {
 

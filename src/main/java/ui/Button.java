@@ -18,6 +18,4 @@ public class Button extends BaseElement {
         getElement().click();
     }
 
-
-
 }

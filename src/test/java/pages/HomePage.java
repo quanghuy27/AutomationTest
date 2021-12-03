@@ -8,18 +8,13 @@ public class HomePage extends PageHelper {
 
     private final TextBox txtSearch = new TextBox("xpath = //input[@class=\"search-input css-1t77xaz\"]");
     private final Button btnSearch = new Button("xpath = //span[@class=\"css-140csle\"]");
-    private final Button chooseSSD = new Button("xpath = //div[@class=\"css-1odsp4p\" and contains(.,'SSD')]");
+    private final Button chooseSSD = new Button("//div[@class=\"css-wj2hqu\"]/div[@class=\"css-neo3za\" and contains(.,'Load')]");
     private final Button btnCloseADS = new Button("xpath = //div[@class=\"css-1vqwujl\"]");
     private final Button btnNews  = new Button("xpath = //button[@class=\"css-1252sqg\" and @data-content-name=\"techNewsURL\"]");
 
     public void setProductName(String productName) {
         txtSearch.enterText(productName);
         btnSearch.click();
-    }
-
-    public void chooseSSD() {
-        waitForElementAppearShow(chooseSSD.getElementLocator());
-        chooseSSD.click();
     }
 
     public void closeADS() {
@@ -30,5 +25,10 @@ public class HomePage extends PageHelper {
     public void clickNews() {
         waitForElementAppearShow(btnNews.getElementLocator());
         btnNews.click();
+    }
+
+    public void chooseSSD() {
+        waitForElementAppearShow(chooseSSD.getElementLocator());
+        chooseSSD.click();
     }
 }
